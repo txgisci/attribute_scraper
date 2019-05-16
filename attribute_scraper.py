@@ -21,7 +21,7 @@ page = requests.get(url)
 soup = BeautifulSoup(page.text, 'html.parser')
 
 # Pulls all data from top right table
-table_pad = soup.findAll('td',attrs={"class":"table_pad"})
+table_pad = soup.findAll('td',attrs={'class':'table_pad'})
 
 # Photo ID
 photo_id = table_pad[1].text
@@ -45,3 +45,14 @@ iss_direction = re.findall(r'\° (.[NSEW]?)', map_location[1])
 # Nadir lat long before conversion
 nadir_coords = re.findall(r'\d+\.\d+', map_location[2])
 nadir_direction = re.findall(r'\° (.[NSEW]?)', map_location[2])
+
+# altitude integer in km
+temp = re.findall(r'\((\d+)', map_location[6])
+
+
+
+
+
+
+
+
